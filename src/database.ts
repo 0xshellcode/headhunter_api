@@ -8,6 +8,8 @@ connection.once('open', () => {
   console.log('Mongodb Connection Stablished!');
 });
 
+console.log(config.DB.URI);
+
 connection.on('error', (err) => {
   console.log(err);
   process.exit(0);
