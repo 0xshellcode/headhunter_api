@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import authRoutes from './routes/auth.routes';
+import talentRoutes from './routes/talent.routes';
 import passport from 'passport';
 import passportMiddleware from './middlewares/passport';
 import specialRoutes from './routes/special.routes';
@@ -11,6 +11,7 @@ import specialRoutes from './routes/special.routes';
 const app = express();
 
 // Settings
+
 app.set('port', process.env.PORT || 3000);
 
 // Middlewares
@@ -28,7 +29,7 @@ app.get('/', (req, res) => {
   res.send(`The api is running at https://localhost:${app.get('port')}`);
 });
 
-app.use(authRoutes);
+app.use(talentRoutes);
 app.use(specialRoutes);
 
 export default app;

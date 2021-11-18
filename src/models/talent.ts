@@ -2,8 +2,8 @@ import { model, Schema, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
 
 export interface ITalent extends Document {
-  name: string;
   email: string;
+  name: string;
   password: string;
   state: string;
   reputation: number;
@@ -41,7 +41,7 @@ const talentSchema = new Schema({
     default: 0,
   },
 
-  habilidades: {
+  skills: {
     type: String,
     required: true,
   },

@@ -21,7 +21,7 @@ export const signUp = async (
   const talent = await Talent.findOne({ email: req.body.email });
 
   if (talent) {
-    return res.status(400).json({ msg: 'The talent already exists' });
+    return res.status(400).json({ msg: 'The Talent already exists' });
   }
 
   const newTalent = new Talent(req.body);
@@ -39,7 +39,7 @@ export const signIn = async (req: Request, res: Response) => {
 
   if (!talent) {
     // If the talent does not exists
-    return res.status(400).json({ msg: 'The talent does not exists' });
+    return res.status(400).json({ msg: 'The Talent does not exists' });
   }
 
   const isMatch = await talent.comparePassword(req.body.password);
