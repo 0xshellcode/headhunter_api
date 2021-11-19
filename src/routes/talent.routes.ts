@@ -5,5 +5,5 @@ const router = Router();
 
 router.post('/talent/signup', signUp);
 router.post('/talent/signin', signIn);
-router.get('talent', getTalents);
+router.get('/talent', getTalents);
 export default router;

@@ -9,6 +9,6 @@ const router = Router();
 
 router.post('/headhunter/signup', signUp);
 router.post('/headhunter/signin', signIn);
-router.get('headhunter', getHeadHunters);
+router.get('/headhunter', getHeadHunters);
 
 export default router;
