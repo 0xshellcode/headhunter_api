@@ -27,6 +27,7 @@ export const signUp = async (
   const newTalent = new Talent(req.body);
   await newTalent.save();
 
+  console.log('A talent has been created');
   return res.status(201).json(newTalent);
 };
 
@@ -39,7 +40,7 @@ export const signIn = async (req: Request, res: Response) => {
 
   if (!talent) {
     // If the talent does not exists
-    return res.status(400).json({ msg: 'The Talent does not exists' });
+    return res.status(400).json({ msg: 'The email does not exists' });
   }
 
   const isMatch = await talent.comparePassword(req.body.password);

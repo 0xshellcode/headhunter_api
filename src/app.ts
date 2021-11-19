@@ -1,10 +1,12 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import talentRoutes from './routes/talent.routes';
 import passport from 'passport';
 import passportMiddleware from './middlewares/passport';
+import headhunterRoutes from './routes/headhunter.routes';
 import specialRoutes from './routes/special.routes';
+import talentRoutes from './routes/talent.routes';
+import contractRoutes from './routes/contract.routes';
 
 // Initializations
 
@@ -31,5 +33,7 @@ app.get('/', (req, res) => {
 
 app.use(talentRoutes);
 app.use(specialRoutes);
+app.use(headhunterRoutes);
+app.use(contractRoutes);
 
 export default app;
