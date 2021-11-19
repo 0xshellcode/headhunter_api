@@ -9,6 +9,7 @@ import talentRoutes from './routes/talent.routes';
 import contractRoutes from './routes/contract.routes';
 import projectRoutes from './routes/project.routes';
 import speeddateRoutes from './routes/speeddate.routes';
+import recordRoutes from './routes/record.routes';
 
 // Initializations
 
@@ -39,5 +40,6 @@ app.use(headhunterRoutes);
 app.use(contractRoutes);
 app.use(projectRoutes);
 app.use(speeddateRoutes);
+app.use(recordRoutes);
 
 export default app;

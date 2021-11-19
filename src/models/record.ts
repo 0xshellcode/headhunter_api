@@ -1,15 +1,11 @@
 import { model, Schema, Document } from 'mongoose';
 
-export interface Record extends Document {
-  title: string;
+export interface IRecord extends Document {
   email: string;
+  projects: Array<string>;
 }
 
 const recordSchema = new Schema({
-  title: {
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     unique: true,
@@ -17,6 +13,10 @@ const recordSchema = new Schema({
     lowercase: true,
     trim: true,
   },
+  projects: {
+    type: Array,
+    required: false,
+  },
 });
 
-export default model<Record>('Record', recordSchema);
+export default model<IRecord>('Record', recordSchema);
