@@ -53,3 +53,8 @@ export const signIn = async (req: Request, res: Response) => {
     msg: 'The email or password are not correct',
   });
 };
+
+export const getTalents = async (req: Request, res: Response) => {
+  const existingTalents = await Talent.find().sort('-_id');
+  res.json({ status: true, talents: existingTalents });
+};

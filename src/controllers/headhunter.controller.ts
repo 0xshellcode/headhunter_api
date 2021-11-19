@@ -55,3 +55,8 @@ export const signIn = async (req: Request, res: Response) => {
     msg: 'The email or password are not correct',
   });
 };
+
+export const getHeadHunters = async (req: Request, res: Response) => {
+  const existingHeadHunters = await HeadHunter.find().sort('-_id');
+  res.json({ status: true, headhunters: existingHeadHunters });
+};
