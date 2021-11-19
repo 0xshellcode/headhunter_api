@@ -31,7 +31,7 @@ passport.use(passportMiddleware);
 // Routes
 
 app.get('/', (req, res) => {
-  res.send(`The api is running at https://localhost:${app.get('port')}`);
+  res.send('Welcome to the HeadHunter API');
 });
 
 app.use(talentRoutes);
