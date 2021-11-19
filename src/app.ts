@@ -7,6 +7,8 @@ import headhunterRoutes from './routes/headhunter.routes';
 import specialRoutes from './routes/special.routes';
 import talentRoutes from './routes/talent.routes';
 import contractRoutes from './routes/contract.routes';
+import projectRoutes from './routes/project.routes';
+import speeddateRoutes from './routes/speeddate.routes';
 
 // Initializations
 
@@ -35,5 +37,7 @@ app.use(talentRoutes);
 app.use(specialRoutes);
 app.use(headhunterRoutes);
 app.use(contractRoutes);
+app.use(projectRoutes);
+app.use(speeddateRoutes);
 
 export default app;

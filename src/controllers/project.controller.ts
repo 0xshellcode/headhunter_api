@@ -8,7 +8,7 @@ export const createProject = async (
   if (
     !req.body.title ||
     !req.body.description ||
-    !req.body.required ||
+    !req.body.category ||
     !req.body.payment
   ) {
     return res.status(400).json({ msg: 'Please send all the required data' });
