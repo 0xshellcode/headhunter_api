@@ -31,5 +31,5 @@ export const createContract = async (
 
 export const getContracts = async (req: Request, res: Response) => {
   const existingContracts = await Contract.find().sort('-_id');
-  res.json(existingContracts);
+  res.json({ status: true, contracts: existingContracts });
 };

@@ -19,5 +19,5 @@ export const createRecord = async (
 
 export const getRecords = async (req: Request, res: Response) => {
   const existingRecords = await Record.find().sort('-_id');
-  res.json(existingRecords);
+  res.json({ status: true, records: existingRecords });
 };

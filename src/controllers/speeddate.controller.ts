@@ -33,5 +33,5 @@ export const createSpeedDate = async (
 
 export const getSpeedDates = async (req: Request, res: Response) => {
   const existingSpeedDates = await SpeedDate.find().sort('-_id');
-  res.json(existingSpeedDates);
+  res.json({ status: true, speeddates: existingSpeedDates });
 };

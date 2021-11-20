@@ -30,5 +30,5 @@ export const createProject = async (
 
 export const getProjects = async (req: Request, res: Response) => {
   const existingProjects = await Project.find().sort('-_id');
-  res.json(existingProjects);
+  res.json({ status: true, projects: existingProjects });
 };
