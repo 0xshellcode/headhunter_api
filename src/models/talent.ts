@@ -13,6 +13,7 @@ export interface ITalent extends Document {
   skills: string;
   contry: string;
   schedule: string;
+  cost: number;
   comparePassword: (password: string) => Promise<boolean>;
 }
 
@@ -68,6 +69,11 @@ const talentSchema = new Schema({
 
   skills: {
     type: String,
+    required: true,
+  },
+
+  cost: {
+    type: Number,
     required: true,
   },
 
