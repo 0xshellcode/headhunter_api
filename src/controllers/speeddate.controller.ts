@@ -9,8 +9,7 @@ export const createSpeedDate = async (
     !req.body.title ||
     !req.body.description ||
     !req.body.modality ||
-    !req.body.hunter_email ||
-    !req.body.talent_email
+    !req.body.email
   ) {
     return res.status(400).json({ msg: 'Please send all the required data' });
   }
