@@ -14,7 +14,7 @@ export const createProject = async (
     return res.status(400).json({ msg: 'Please send all the required data' });
   }
 
-  const project = await Project.findOne({ email: req.body.title });
+  const project = await Project.findOne({ title: req.body.title });
 
   if (project) {
     return res.status(400).json({ msg: 'The project already exists' });

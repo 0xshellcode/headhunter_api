@@ -15,7 +15,7 @@ export const createSpeedDate = async (
     return res.status(400).json({ msg: 'Please send all the required data' });
   }
 
-  const speeddate = await SpeedDate.findOne({ email: req.body.title });
+  const speeddate = await SpeedDate.findOne({ title: req.body.title });
 
   if (speeddate) {
     return res.status(400).json({ msg: 'The speed date already exists' });
