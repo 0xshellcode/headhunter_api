@@ -4,21 +4,40 @@ import bcrypt from 'bcrypt';
 export interface ITalent extends Document {
   email: string;
   name: string;
+  username: string;
+  telephone: string;
   password: string;
   state: string;
   reputation: number;
   profession: string;
   skills: string;
+  contry: string;
+  schedule: string;
   comparePassword: (password: string) => Promise<boolean>;
 }
 
 const talentSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+
+  username: {
+    type: String,
+    required: true,
+  },
+
   email: {
     type: String,
     unique: true,
     required: true,
     lowercase: true,
     trim: true,
+  },
+
+  telephone: {
+    type: String,
+    required: false,
   },
 
   password: {
@@ -31,6 +50,11 @@ const talentSchema = new Schema({
     required: true,
   },
 
+  contry: {
+    type: String,
+    required: false,
+    default: 'mx',
+  },
   profession: {
     type: String,
     required: true,
@@ -38,10 +62,16 @@ const talentSchema = new Schema({
 
   reputation: {
     type: Number,
+    required: false,
     default: 0,
   },
 
   skills: {
+    type: String,
+    required: true,
+  },
+
+  schedule: {
     type: String,
     required: true,
   },

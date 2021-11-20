@@ -4,21 +4,38 @@ import bcrypt from 'bcrypt';
 export interface IHeadHunter extends Document {
   name: string;
   email: string;
+  username: string;
+  telephone: string;
   password: string;
   state: string;
   company: string;
   projects: string;
   reputation: number;
+  contry: string;
   comparePassword: (password: string) => Promise<boolean>;
 }
 
 const headHunterSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+
   email: {
     type: String,
     unique: true,
     required: true,
     lowercase: true,
     trim: true,
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+
+  telephone: {
+    type: String,
+    required: false,
   },
 
   password: {
@@ -40,9 +57,14 @@ const headHunterSchema = new Schema({
     type: String,
     required: false,
   },
-
+  contry: {
+    type: String,
+    required: false,
+    default: 'mexico',
+  },
   reputation: {
     type: Number,
+    required: false,
     default: 0,
   },
 });
